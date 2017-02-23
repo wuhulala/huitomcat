@@ -40,7 +40,7 @@ content-type:text/html
 
 ```
 //MyHttpServer.java
-package com.wuhulala.chap1;
+package com.wuhulala.chap2;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -122,7 +122,7 @@ public class MyHttpServer {
 
 ```
 //
-package com.wuhulala.chap1;
+package com.wuhulala.chap2;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -195,7 +195,7 @@ public class MyRequest {
 ```
 
 ```
-package com.wuhulala.chap1;
+package com.wuhulala.chap2;
 
 import java.io.IOException;
 import java.io.OutputStream;

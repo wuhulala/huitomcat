@@ -11,6 +11,7 @@
     <description>学习tomcat源码</description>
     <modules>
         <module>chap1</module>
+        <module>chap2</module>
     </modules>
     <dependencyManagement>
         <dependencies>
