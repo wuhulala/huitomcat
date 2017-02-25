@@ -1,6 +1,5 @@
 package com.wuhulala.chap2;
 
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -14,18 +13,7 @@ import java.net.Socket;
  * @date 2017/2/19
  */
 public class MyHttpServer {
-    //地址
-    private static final String HTTP_HOST = "127.0.0.1";
-    //端口
-    private static final int HTTP_PORT = 8080;
-    //停止服务器命令
-    private static final String SHUTDOWN_COMMAND = "/shutdown";
-    //html文件目录
-    static final String HTML_ROOT = System.getProperty("user.dir")+ File.separator + "webroot";
-    //默认欢迎页面
-    static final String WELCOME_PAGE = "hello.html";
-    //404 page
-    static final String PAGE_404 = "error.html";
+
 
     public static void main(String[] args) {
         MyHttpServer server = new MyHttpServer();
@@ -38,7 +26,7 @@ public class MyHttpServer {
 
         ServerSocket serverSocket = null;
         try {
-            serverSocket = new ServerSocket(HTTP_PORT, 1, InetAddress.getByName(HTTP_HOST));
+            serverSocket = new ServerSocket(MyHTTPConstans.HTTP_PORT, 1, InetAddress.getByName(MyHTTPConstans.HTTP_HOST));
         } catch (IOException e) {
             System.out.println(">>>>>>>>>启动服务器异常<<<<<<<<<<");
             e.printStackTrace();
@@ -47,7 +35,7 @@ public class MyHttpServer {
         System.out.println(">>>>>>>>>启动服务器成功<<<<<<<<<<");
 
         boolean shutdown = false;
-        while(!shutdown){
+        while (!shutdown) {
             Socket client = null;
             InputStream input = null;
             OutputStream out = null;
@@ -63,11 +51,19 @@ public class MyHttpServer {
 
                 MyResponse response = new MyResponse(out);
                 response.setRequest(request);
-                response.sendHtml();
+
+                //如果是动态的请求 需
+                if (request.getUri().startsWith("/servlet/")) {
+                    MyServletProcessor processor = new MyServletProcessor();
+                    processor.process(request,response);
+                } else {
+                    MyStaticProcessor processor = new MyStaticProcessor();
+                    processor.process(request,response);
+                }
 
                 client.close();
 
-                shutdown = request.getUri().equals(SHUTDOWN_COMMAND);
+                shutdown = request.getUri().equals(MyHTTPConstans.SHUTDOWN_COMMAND);
 
             } catch (IOException e) {
                 System.out.println(">>>>>>>>>关闭Socket异常<<<<<<<<<<");

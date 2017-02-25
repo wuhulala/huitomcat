@@ -1,17 +1,20 @@
 package com.wuhulala.chap2;
 
+import javax.servlet.ServletOutputStream;
+import javax.servlet.ServletResponse;
 import java.io.*;
+import java.util.Locale;
 
 /**
  * @author xueaohui
  * @version 1.0
  * @date 2017/2/19
  */
-public class MyResponse {
-    private static final int BUFFER_SIZE = 2048;
+public class MyResponse implements ServletResponse {
 
     private OutputStream out;
     private MyRequest request;
+    PrintWriter writer;
 
     public MyResponse(OutputStream out) {
         this.out = out;
@@ -21,55 +24,89 @@ public class MyResponse {
         this.request = request;
     }
 
+    public OutputStream getOut() {
+        return out;
+    }
 
-    public void sendMessage() throws IOException {
+    //------------implement method------------------
+    @Override
+    public String getCharacterEncoding() {
+        return null;
+    }
 
-        String message = "HTTP/1.1 200 OK \r\n" +
-                "content-type:text/html\r\n" +
-                "\r\n" +
-                "<h1>Hello " + request.getUri() + "!</h1>" +
-                "<h2>shutdown_command:/shutdown</h2>";
+    @Override
+    public String getContentType() {
+        return null;
+    }
 
-        out.write(message.getBytes());
+    @Override
+    public ServletOutputStream getOutputStream() throws IOException {
+        return null;
+    }
+
+    @Override
+    public PrintWriter getWriter() throws IOException {
+        writer = new PrintWriter(out,true);
+        return writer;
+    }
+
+    @Override
+    public void setCharacterEncoding(String s) {
 
     }
 
-    public void sendHtml() {
-        File file = new File(MyHttpServer.HTML_ROOT, request.getUri());
-        try {
-            copyFileToOut(file);
-        } catch (IOException e) {
-            System.out.println(">>>>>>>>>>>>页面异常<<<<<<<<<<<");
-            System.out.println(e.getMessage());
-            send404Page();
-        }
+    @Override
+    public void setContentLength(int i) {
 
     }
 
-    public void send404Page() {
-        File file = new File(MyHttpServer.HTML_ROOT, MyHttpServer.PAGE_404);
-        try {
-            copyFileToOut(file);
-        } catch (IOException e) {
-            System.out.println(">>>>>>>>>>>>404 ERROR<<<<<<<<<<<");
-        }
-    }
-
-    public void copyFileToOut(File file) throws IOException {
-        try (FileInputStream fis = new FileInputStream(file)) {
-
-            //创建字节数组缓冲区
-            byte[] buff = new byte[BUFFER_SIZE];
-            //把文件中的数据读入到buff中
-            int len = fis.read(buff);
-            while (len != -1) {
-                //把buff中的数据写到out.txt文件中
-                out.write(buff, 0, len);
-                //从新读取输入流，此时已到达输入流的结尾
-                len = fis.read(buff);
-            }
-        }
+    @Override
+    public void setContentLengthLong(long l) {
 
     }
 
+    @Override
+    public void setContentType(String s) {
+
+    }
+
+    @Override
+    public void setBufferSize(int i) {
+
+    }
+
+    @Override
+    public int getBufferSize() {
+        return 0;
+    }
+
+    @Override
+    public void flushBuffer() throws IOException {
+
+    }
+
+    @Override
+    public void resetBuffer() {
+
+    }
+
+    @Override
+    public boolean isCommitted() {
+        return false;
+    }
+
+    @Override
+    public void reset() {
+
+    }
+
+    @Override
+    public void setLocale(Locale locale) {
+
+    }
+
+    @Override
+    public Locale getLocale() {
+        return null;
+    }
 }
