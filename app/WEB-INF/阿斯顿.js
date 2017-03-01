@@ -1,0 +1,13 @@
+var html = [];
+html.push("<div  class='uc-t ubb ub b-gra t-bla ub-ac lis umh4'>");
+html.push(" <div class='ub-f1 ut-s'></div>");
+html.push("    <div class='tx-r t-blu ulev-1'>");
+html.push("        <div class='ufr ub ub-pe'>");
+html.push("            <div class='info-box uc-a'>");
+html.push("                asasdasdd");
+html.push("            </div>");
+html.push("            <div class='avator'></div>");
+html.push("        </div>");
+html.push("    </div>");
+html.push("    <div class='res8 lis-sw ub-img'></div>");
+html.push("</div>");

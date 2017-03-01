@@ -1,8 +1,10 @@
-package com.wuhulala.chap2;
+package com.wuhulala.huitomcat.chap3;
 
 import javax.servlet.ServletOutputStream;
 import javax.servlet.ServletResponse;
-import java.io.*;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.PrintWriter;
 import java.util.Locale;
 
 /**

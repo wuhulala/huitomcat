@@ -12,6 +12,7 @@
     <modules>
         <module>chap1</module>
         <module>chap2</module>
+        <module>chap3</module>
     </modules>
     <dependencyManagement>
         <dependencies>
@@ -26,6 +27,13 @@
                 <artifactId>javax.servlet-api</artifactId>
                 <version>3.1.0</version>
             </dependency>
+
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-log4j12</artifactId>
+                <version>1.7.21</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
