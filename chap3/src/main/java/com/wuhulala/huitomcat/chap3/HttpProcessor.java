@@ -51,7 +51,7 @@ public class HttpProcessor {
                 processor.process(request, response);
             }
             logger.debug("request[{}] ended ..", request.getUri());
-            response.getOut().close();
+            socket .close();
         } catch (Exception e) {
             logger.error("处理客户端请求出错:", e);
         }
