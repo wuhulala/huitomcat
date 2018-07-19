@@ -52,6 +52,12 @@ public class MyHttpServer {
                 MyResponse response = new MyResponse(out);
                 response.setRequest(request);
 
+                String errorMessage = "HTTP/1.1 200 OK\r\n" +
+                        "Content-Type: text/html; charset=UTF-8\r\n" +
+                        "\r\n";
+
+
+                response.getOut().write(errorMessage.getBytes());
                 //如果是动态的请求 需
                 if (request.getUri().startsWith("/servlet/")) {
                     MyServletProcessor processor = new MyServletProcessor();

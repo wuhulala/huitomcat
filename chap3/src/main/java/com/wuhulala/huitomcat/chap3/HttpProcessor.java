@@ -1,6 +1,5 @@
 package com.wuhulala.huitomcat.chap3;
 
-import jdk.management.resource.internal.inst.SocketInputStreamRMHooks;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -33,18 +32,26 @@ public class HttpProcessor {
             output = socket.getOutputStream();
 
             MyRequest request = new MyRequest(input);
+            request.parse();
             MyResponse response = new MyResponse(output);
+            response.setRequest(request);
 
             parseRequest(input, output);
             parseHeaders(input);
 
+
+            logger.debug("request[{}] start ..", request.getUri());
+
             if (request.getUri().startsWith("/servlet")) {
                 MyServletProcessor processor = new MyServletProcessor();
                 processor.process(request, response);
+
             } else {
                 MyStaticProcessor processor = new MyStaticProcessor();
                 processor.process(request, response);
             }
+            logger.debug("request[{}] ended ..", request.getUri());
+            response.getOut().close();
         } catch (Exception e) {
             logger.error("处理客户端请求出错:", e);
         }

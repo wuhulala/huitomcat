@@ -60,7 +60,7 @@ class MyRequest implements ServletRequest{
             if(index2 > index1){
                 uri = request.substring(index1+1,index2);
                 if("/".equals(uri)){
-                    uri = MyHTTPConstans .WELCOME_PAGE;
+                    uri = MyHTTPConstans.WELCOME_PAGE;
                 }
             }else{
                 uri = "error";
