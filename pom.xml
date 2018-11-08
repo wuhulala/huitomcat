@@ -13,6 +13,7 @@
         <module>chap1</module>
         <module>chap2</module>
         <module>chap3</module>
+        <module>chap4</module>
     </modules>
     <dependencyManagement>
         <dependencies>
@@ -32,6 +33,12 @@
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-log4j12</artifactId>
                 <version>1.7.21</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>1.2.21</version>
             </dependency>
 
         </dependencies>

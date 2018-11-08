@@ -15,7 +15,7 @@ import java.net.Socket;
  * @version 1.0
  * @date 2017/3/1
  */
-public class HttpConnector implements Runnable {
+public class HttpConnector implements Runnable{
 
     private static final Logger logger = LoggerFactory.getLogger(HttpConnector.class);
 
@@ -30,25 +30,25 @@ public class HttpConnector implements Runnable {
     public void run() {
         ServerSocket serverSocket = null;
         try {
-            serverSocket = new ServerSocket(MyHTTPConstans.HTTP_PORT, 1, InetAddress.getByName(MyHTTPConstans.HTTP_HOST));
+            serverSocket =  new ServerSocket(MyHTTPConstans.HTTP_PORT,1, InetAddress.getByName(MyHTTPConstans.HTTP_HOST));
         } catch (IOException e) {
-            logger.error("启动服务器错误:", e);
+            logger.error("启动服务器错误:",e);
             System.exit(1);
         }
-        while (!stopped) {
+        while(!stopped){
             Socket socket = null;
             try {
                 socket = serverSocket.accept();
             } catch (IOException e) {
-                logger.error("接受客户端请求错误:", e);
+                logger.error("接受客户端请求错误:",e);
                 continue;
             }
-            HttpProcessor processor = new HttpProcessor();
+            HttpProcessor  processor = new HttpProcessor();
             processor.process(socket);
         }
     }
 
-    public void start() {
+    public void start(){
         Thread thread = new Thread(this);
         thread.start();
     }

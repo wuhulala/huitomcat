@@ -1,4 +1,4 @@
-package com.wuhulala.chap2;
+package com.wuhulala.huitomcat.chap3;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -47,7 +47,7 @@ public class MyHttpServer {
                 out = client.getOutputStream();
 
                 MyRequest request = new MyRequest(input);
-                request.parse();
+                //request.parse();
 
                 MyResponse response = new MyResponse(out);
                 response.setRequest(request);

@@ -1,0 +1,50 @@
+2017-03-04 10:16:45,438 ERROR [com.wuhulala.huitomcat.chap3.HttpProcessor] - 处理客户端请求出错:
+java.lang.NullPointerException
+	at com.wuhulala.huitomcat.chap3.HttpProcessor.process(HttpProcessor.java:46)
+	at com.wuhulala.huitomcat.chap3.HttpConnector.run(HttpConnector.java:47)
+	at java.lang.Thread.run(Thread.java:745)
+2017-03-04 10:16:46,765 ERROR [com.wuhulala.huitomcat.chap3.HttpProcessor] - 处理客户端请求出错:
+java.lang.NullPointerException
+	at com.wuhulala.huitomcat.chap3.HttpProcessor.process(HttpProcessor.java:46)
+	at com.wuhulala.huitomcat.chap3.HttpConnector.run(HttpConnector.java:47)
+	at java.lang.Thread.run(Thread.java:745)
+2017-03-04 10:17:16,008 ERROR [com.wuhulala.huitomcat.chap3.HttpProcessor] - 处理客户端请求出错:
+java.lang.NullPointerException
+	at com.wuhulala.huitomcat.chap3.HttpProcessor.process(HttpProcessor.java:46)
+	at com.wuhulala.huitomcat.chap3.HttpConnector.run(HttpConnector.java:47)
+	at java.lang.Thread.run(Thread.java:745)
+2017-03-04 10:17:16,023 ERROR [com.wuhulala.huitomcat.chap3.HttpProcessor] - 处理客户端请求出错:
+java.lang.NullPointerException
+	at com.wuhulala.huitomcat.chap3.HttpProcessor.process(HttpProcessor.java:46)
+	at com.wuhulala.huitomcat.chap3.HttpConnector.run(HttpConnector.java:47)
+	at java.lang.Thread.run(Thread.java:745)
+2017-03-04 10:17:31,507 ERROR [com.wuhulala.huitomcat.chap3.HttpProcessor] - 处理客户端请求出错:
+java.lang.NullPointerException
+	at com.wuhulala.huitomcat.chap3.HttpProcessor.process(HttpProcessor.java:46)
+	at com.wuhulala.huitomcat.chap3.HttpConnector.run(HttpConnector.java:47)
+	at java.lang.Thread.run(Thread.java:745)
+2017-03-04 10:20:09,794 ERROR [com.wuhulala.huitomcat.chap3.HttpProcessor] - 处理客户端请求出错:
+java.lang.NullPointerException
+	at com.wuhulala.huitomcat.chap3.HttpProcessor.process(HttpProcessor.java:46)
+	at com.wuhulala.huitomcat.chap3.HttpConnector.run(HttpConnector.java:47)
+	at java.lang.Thread.run(Thread.java:745)
+2017-03-04 10:20:09,801 ERROR [com.wuhulala.huitomcat.chap3.HttpProcessor] - 处理客户端请求出错:
+java.lang.NullPointerException
+	at com.wuhulala.huitomcat.chap3.HttpProcessor.process(HttpProcessor.java:46)
+	at com.wuhulala.huitomcat.chap3.HttpConnector.run(HttpConnector.java:47)
+	at java.lang.Thread.run(Thread.java:745)
+2017-03-04 10:20:59,581 ERROR [com.wuhulala.huitomcat.chap3.HttpProcessor] - 处理客户端请求出错:
+java.lang.NullPointerException
+	at com.wuhulala.huitomcat.chap3.HttpProcessor.process(HttpProcessor.java:46)
+	at com.wuhulala.huitomcat.chap3.HttpConnector.run(HttpConnector.java:47)
+	at java.lang.Thread.run(Thread.java:745)
+2017-03-04 10:27:06,992 ERROR [com.wuhulala.huitomcat.chap3.HttpProcessor] - 处理客户端请求出错:
+java.lang.NullPointerException
+	at com.wuhulala.huitomcat.chap3.HttpProcessor.process(HttpProcessor.java:46)
+	at com.wuhulala.huitomcat.chap3.HttpConnector.run(HttpConnector.java:47)
+	at java.lang.Thread.run(Thread.java:745)
+2017-03-04 10:27:06,997 ERROR [com.wuhulala.huitomcat.chap3.HttpProcessor] - 处理客户端请求出错:
+java.lang.NullPointerException
+	at com.wuhulala.huitomcat.chap3.HttpProcessor.process(HttpProcessor.java:46)
+	at com.wuhulala.huitomcat.chap3.HttpConnector.run(HttpConnector.java:47)
+	at java.lang.Thread.run(Thread.java:745)
